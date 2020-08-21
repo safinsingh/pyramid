@@ -17,7 +17,7 @@ client.on('message', (msg) => {
     let toSend = ``
     for (let i = 1; i <= parseInt(msg.content.split(' ')[1]); i++) {
       for (let z = 0; z < i; z++) {
-        toSend += `${msg.content.split(' ')[2]} `
+        toSend += `${msg.content.split(' ').slice(2).join(' ')}`
       }
       toSend += '\n'
     }
