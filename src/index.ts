@@ -21,7 +21,11 @@ client.on('message', (msg) => {
       }
       toSend += '\n'
     }
-    channel.send(`${toSend}`)
+    channel
+      .send(`${toSend}`)
+      .catch((err) =>
+        channel.send(`oops that didnt work, stop tryna break me :(\n${err}`)
+      )
   }
 })
 
