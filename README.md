@@ -12,5 +12,5 @@ It's also pretty fail-safe! If you hack it, please make a PR and I'll add you to
 
 ## Hacker List
 
-- [raad1masum](https://github.com/raad1masum): Hack 1, 3, and 4
-- [Akshay-Rohatgi](https://github.com/Akshay-Rohatgi): Hack 2
+- [raad1masum](https://github.com/raad1masum): 3 Hacks
+- [Akshay-Rohatgi](https://github.com/Akshay-Rohatgi): 1 Hack
