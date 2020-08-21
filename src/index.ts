@@ -22,7 +22,6 @@ client.on('message', (msg) => {
 
     const valid = isValid(msg)
     if (!valid.isValid) {
-      console.log(valid)
       msg.reply(valid.error)
       msg.react(valid.reaction as Discord.EmojiResolvable)
       return
