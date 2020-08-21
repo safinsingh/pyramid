@@ -6,6 +6,7 @@ const client = new Discord.Client()
 
 client.on('ready', () => {
   console.log('Ready!')
+  // eslint-disable-next-line
   client!.user!.setActivity('making sideways pyramids')
 })
 
