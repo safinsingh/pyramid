@@ -16,6 +16,14 @@ client.on('message', (msg) => {
     const splitted = msg.content.split(' ')
     if (splitted.length < 3) return
     let toSend = ''
+    let done = false
+    splitted.slice(1).forEach((e) => {
+      if (e === '/pyramid') {
+        msg.reply('no recursiveness :( ps. ur bad')
+        done = true
+      }
+    })
+    if (done) return
     for (let i = 1; i <= parseInt(splitted[1]); i++) {
       for (let z = 0; z < i; z++) {
         toSend += `${splitted.slice(2).join(' ')} `
@@ -25,7 +33,7 @@ client.on('message', (msg) => {
     channel
       .send(`${toSend}`)
       .catch((err) =>
-        channel.send(`oops that didnt work, stop tryna break me :(\n${err}`)
+        msg.reply(`oops that didnt work, stop tryna break me :(\n${err}`)
       )
   }
 })
