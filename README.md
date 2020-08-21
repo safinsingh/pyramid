@@ -1,6 +1,6 @@
 # pyramid
 
-A discord bot to make pyramids with your words! Add it to your server [here](https://discord.com/api/oauth2/authorize?client_id=746216833434255420&permissions=67584&scope=bot)!
+A discord bot to make pyramids with your words! Add it to your server [here](https://discord.com/api/oauth2/authorize?client_id=746216833434255420&permissions=75776&scope=bot)!
 
 > P.S. this is just for fun, so the bot won't be up 100% of the time. You can clone this repo and start the bot by yourself if you'd like, just keep the LICENSE :)
 
