@@ -1,4 +1,4 @@
-# pyramid
+# pyramid ![lint](https://github.com/safinsingh/pyramid/workflows/lint/badge.svg) ![format](https://github.com/safinsingh/pyramid/workflows/format/badge.svg)
 
 A discord bot to make pyramids with your words! Add it to your server [here](https://discord.com/api/oauth2/authorize?client_id=746216833434255420&permissions=75776&scope=bot)!
 
@@ -8,7 +8,7 @@ A discord bot to make pyramids with your words! Add it to your server [here](htt
 
 ![main](./assets/a.png)
 
-It's also pretty safe! If you hack it, please make a PR and I'll add you to the [hackers list](#hacker-list) :)
+It's also pretty fail-safe! If you hack it, please make a PR and I'll add you to the [hackers list](#hacker-list) :)
 
 ## Hacker List
 
