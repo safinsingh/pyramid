@@ -23,7 +23,12 @@ client.on('message', (msg) => {
         done = true
       }
     })
-    if (done) return
+    if (parseInt(splitted[1]) * splitted.slice(2).join(' ').length > 1500)
+      done = true
+    if (done) {
+      msg.reply('stop hacking not nice :(')
+      return
+    }
     for (let i = 1; i <= parseInt(splitted[1]); i++) {
       for (let z = 0; z < i; z++) {
         toSend += `${splitted.slice(2).join(' ')} `
