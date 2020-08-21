@@ -46,7 +46,6 @@ client.on('message', (msg) => {
       toSend += '\n'
     }
     const user = msg.author.tag
-    msg.delete()
     channel
       .send(`${toSend}`)
       .catch((err) =>
