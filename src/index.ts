@@ -26,6 +26,10 @@ client.on('message', (msg) => {
         msg.reply('no recursiveness :( ps. ur bad')
         done = true
       }
+      if (e.includes('͔')) {
+        msg.reply('sshhh we dont talk about that')
+        done = true
+      }
     })
     if (parseInt(splitted[1]) * splitted.slice(2).join(' ').length > 1500) {
       msg.reply('stop hacking not nice :(')
