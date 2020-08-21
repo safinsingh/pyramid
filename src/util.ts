@@ -72,3 +72,15 @@ export const isValid = (msg: Discord.Message): validCheck => {
     }
   }
 }
+
+export const genPyramid = (toRepeat: string, size: number): string => {
+  let toSend = ''
+
+  for (let i = 0; i <= size; i++) {
+    for (let z = 0; z < i; z++) {
+      toSend += `${toRepeat} `
+    }
+    toSend += '\n'
+  }
+  return toSend
+}

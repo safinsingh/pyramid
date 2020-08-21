@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import Discord from 'discord.js'
 
-import { isValid } from './util'
+import { isValid, genPyramid } from './util'
 
 dotenv.config()
 const client = new Discord.Client()
@@ -19,7 +19,6 @@ client.on('message', (msg) => {
   if (content[0] === '/pyramid') {
     const size = parseInt(content[1])
     const toRepeat = content.slice(2).join(' ')
-    let toSend = ''
 
     const valid = isValid(msg)
     if (!valid.isValid) {
@@ -29,15 +28,10 @@ client.on('message', (msg) => {
       return
     }
 
-    for (let i = 0; i <= size; i++) {
-      for (let z = 0; z < i; z++) {
-        toSend += `${toRepeat} `
-      }
-      toSend += '\n'
-    }
+    const toSend = genPyramid(toRepeat, size)
 
     channel
-      .send(`${toSend}`)
+      .send(toSend)
       .catch((err) =>
         msg.reply(
           `Nice! It looks like you've successfully hacked the Pyramid! Feel free to pen a pull request :). BTW, the error was: ${err}`
