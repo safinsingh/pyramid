@@ -45,10 +45,14 @@ client.on('message', (msg) => {
       }
       toSend += '\n'
     }
+    const user = msg.author.tag
+    msg.delete()
     channel
       .send(`${toSend}`)
       .catch((err) =>
-        msg.reply(`oops that didnt work, stop tryna break me :(\n${err}`)
+        channel.send(
+          `${user}, oops that didnt work, stop tryna break me :(\n${err}`
+        )
       )
   }
 })
