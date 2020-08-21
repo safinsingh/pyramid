@@ -1,13 +1,15 @@
 import dotenv from 'dotenv'
-dotenv.config()
-
 import Discord from 'discord.js'
+
+import { isValid } from './util'
+
+dotenv.config()
 const client = new Discord.Client()
+client.login(process.env.TOKEN)
 
 client.on('ready', () => {
   console.log('Ready!')
-  // eslint-disable-next-line
-  client!.user!.setActivity('making sideways pyramids')
+  client?.user?.setActivity('making sideways pyramids')
 })
 
 client.on('message', (msg) => {
@@ -15,46 +17,29 @@ client.on('message', (msg) => {
   const channel = msg.channel as Discord.TextChannel
 
   if (content[0] === '/pyramid') {
-    if (content.length < 3) {
-      msg.react('🗑️')
-      msg.reply('invalid length! gimme something better')
-      return
-    }
+    const size = parseInt(content[1])
+    const toRepeat = content.slice(2).join(' ')
     let toSend = ''
-    let done = false
-    content.slice(1).forEach((e) => {
-      if (e === '/pyramid') {
-        msg.reply('no recursiveness :( ps. ur bad')
-        done = true
-      }
-      if (e.includes('͔')) {
-        msg.reply('sshhh we dont talk about that')
-        done = true
-      }
-    })
-    if (parseInt(content[1]) * content.slice(2).join(' ').length > 1500) {
-      msg.reply('stop hacking not nice :(')
-      done = true
+
+    const valid = isValid(msg)
+    if (!valid.isValid) {
+      msg.react(valid.reaction as Discord.EmojiResolvable)
+      msg.reply(valid.error)
     }
-    if (done) {
-      msg.react('😡')
-      return
-    }
-    for (let i = 0; i <= parseInt(content[1]); i++) {
+
+    for (let i = 0; i <= size; i++) {
       for (let z = 0; z < i; z++) {
-        toSend += `${content.slice(2).join(' ')} `
+        toSend += `${toRepeat} `
       }
       toSend += '\n'
     }
-    const user = msg.author.tag
+
     channel
       .send(`${toSend}`)
       .catch((err) =>
-        channel.send(
-          `${user}, oops that didnt work, stop tryna break me :(\n${err}`
+        msg.reply(
+          `Nice! It looks like you've successfully hacked the Pyramid! Feel free to pen a pull request :). BTW, the error was: ${err}`
         )
       )
   }
 })
-
-client.login(process.env.TOKEN)
