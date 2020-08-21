@@ -21,7 +21,7 @@ client.on('message', (msg) => {
       }
       toSend += '\n'
     }
-    channel.send(`${toSend}\n..........`)
+    channel.send(`${toSend}`)
   }
 })
 
