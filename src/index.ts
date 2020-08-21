@@ -14,7 +14,11 @@ client.on('message', (msg) => {
   if (msg.content.startsWith('/pyramid')) {
     const channel = msg.channel as Discord.TextChannel
     const splitted = msg.content.split(' ')
-    if (splitted.length < 3) return
+    if (splitted.length < 3) {
+      msg.react('🗑️')
+      msg.reply('invalid length! gimme something better')
+      return
+    }
     let toSend = ''
     let done = false
     splitted.slice(1).forEach((e) => {
@@ -23,13 +27,15 @@ client.on('message', (msg) => {
         done = true
       }
     })
-    if (parseInt(splitted[1]) * splitted.slice(2).join(' ').length > 1500)
-      done = true
-    if (done) {
+    if (parseInt(splitted[1]) * splitted.slice(2).join(' ').length > 1500) {
       msg.reply('stop hacking not nice :(')
+      done = true
+    }
+    if (done) {
+      msg.react('😡')
       return
     }
-    for (let i = 1; i <= parseInt(splitted[1]); i++) {
+    for (let i = 0; i <= parseInt(splitted[1]); i++) {
       for (let z = 0; z < i; z++) {
         toSend += `${splitted.slice(2).join(' ')} `
       }
