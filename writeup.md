@@ -4,7 +4,7 @@
 
 Hey there! We'll be using Node.js, TypeScript, and Discord's JS API to create a pyramid bot that looks like this:
 
-![screenshot](./assets/a.png)
+![screenshot](https://raw.githubusercontent.com/safinsingh/pyramid/master/assets/a.png)
 
 I'll be assuming you're already familiar with some of the basics of Discord and JavaScript. Let's get started!
 
@@ -56,11 +56,11 @@ Perfect! Now that we know all the files and directories are for, let's install s
 
 First, create a Discord account if you don't have one at [discord.com](https://discord.com). Then, navigate to the [Discord developer portal](https://discord.com/developers) and create a new app:
 
-![create app](./assets/create_app.png)
+![create app](https://raw.githubusercontent.com/safinsingh/pyramid/master/assets/create_app.png)
 
 From there, hit the `Bot` tab and copy your bot token:
 
-![token](./assets/token.png)
+![token](https://raw.githubusercontent.com/safinsingh/pyramid/master/assets/token.png)
 
 Then, just copy-and-paste that into a `.env` file within your Pyramid directory like so:
 
@@ -78,7 +78,7 @@ or by opening it with your text editor and changing it through that.
 
 Finally, add it to your server by going to the `OAuth2` tab and generating a URL with `scopes` being `bot` and with the permisssion bit `67584`:
 
-![OAuth](./assets/oauth.png)
+![OAuth](https://raw.githubusercontent.com/safinsingh/pyramid/master/assets/oauth.png)
 
 Just copy this into your browser and you should be able to add your bot to your server! For now it'll be offline, so we'll not to set that up first.
 
@@ -330,7 +330,7 @@ client.on('message', (msg) => {
 
 Woohoo 🎉! You've finally finished the Pyramid bot! You can now add some more finishing touches to it if you like it and personalize it!
 
-![screenshot](./assets/a.png)
+![screenshot](https://raw.githubusercontent.com/safinsingh/pyramid/master/assets/a.png)
 
 If you have any suggestions or want to share your version of pyramid, open an issue or pull request to [github.com/safinsingh/pyramid](https://github.com/safinsingh/pyramid).
 
